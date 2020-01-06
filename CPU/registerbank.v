@@ -1,4 +1,4 @@
-module register_bank(clock, read_register1, read_register2, write_register, write_data, write, read_data1, read_data2);
+module registerbank(clock, read_register1, read_register2, write_register, write_data, write, read_data1, read_data2);
 	parameter delay = 100;
 	
 	input clock;

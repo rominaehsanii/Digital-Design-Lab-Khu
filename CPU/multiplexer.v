@@ -1,4 +1,4 @@
-module mux(a, b, select, out);
+module multiplexer(a, b, select, out);
 	parameter n=64;
 	parameter delay = 50;
 	
