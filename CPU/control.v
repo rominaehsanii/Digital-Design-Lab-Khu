@@ -1,10 +1,11 @@
-module Control (inputs,ALUSrc, MemtoReg, RegWrite,MemRead, MemWrite, Branch, ALUOp1, ALUOp0);
+module control(inputs,ALUSrc, MemtoReg, RegWrite,MemRead, MemWrite, Branch, ALUOperation);
 
     input [6:0] inputs;
-    output ALUSrc, MemtoReg, RegWrite, MemRead, MemWrite, Branch, ALUOp1, ALUOp0;
+    output ALUSrc, MemtoReg, RegWrite, MemRead, MemWrite, Branch;
     reg [7:0] outputs;
+    output [1 : 0] ALUOperation;
 
-    assign {ALUSrc, MemtoReg, RegWrite, MemRead, MemWrite, Branch, ALUOp1, ALUOp0} = outputs;
+    assign {ALUSrc, MemtoReg, RegWrite, MemRead, MemWrite, Branch, ALUOperation[1], ALUOperation[0]} = outputs;
      
 
     always @ (inputs) begin
