@@ -1,6 +1,6 @@
-module datamemory(clock, input_address, input_data, read, write, output_data);
+module datamemory(clk, input_address, input_data, read, write, output_data);
 
-	input clock;
+	input clk;
 	input read;
 	input write;
 
@@ -13,7 +13,7 @@ module datamemory(clock, input_address, input_data, read, write, output_data);
 
 	assign output_data = read ? memory[input_address] : 64'bz;
 
-	always @(posedge clock) begin
+	always @(posedge clk) begin
 		if(write == 1'b1) begin
 			memory[input_address] <= input_data;
 		end

@@ -1,7 +1,7 @@
-module registerbank(clock, read_register1, read_register2, write_register, write_data, write, read_data1, read_data2);
+module registerbank(clk, read_register1, read_register2, write_register, write_data, write, read_data1, read_data2);
 	parameter delay = 100;
 	
-	input clock;
+	input clk;
 	input [4:0] read_register1;
 	input [4:0] read_register2;
 	input [4:0] write_register;
@@ -23,7 +23,7 @@ module registerbank(clock, read_register1, read_register2, write_register, write
 			end
 
 	
-	always @(posedge clock)begin
+	always @(posedge clk)begin
 		if(write==1'b1)begin
 			#delay registerbank [write_register] <= write_data;
 		end
