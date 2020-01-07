@@ -1,34 +1,16 @@
 module instruction_memory(read_address, instruction);
-	parameter delay = 50;
 	
 	input [63:0]read_address;
 	output [31:0]instruction;
 	reg [7:0]memory[0:127];
 
-  assign #delay instruction[7 : 0] = memory[read_address]; 
-  assign #delay instruction[15 : 8] = memory[read_address + 1];
-  assign #delay instruction[23 : 16] = memory[read_address + 2];
-  assign #delay instruction[31 : 24] = memory[read_address + 3];
+  assign instruction[7 : 0] = memory[read_address]; 
+  assign instruction[15 : 8] = memory[read_address + 1];
+  assign instruction[23 : 16] = memory[read_address + 2];
+  assign instruction[31 : 24] = memory[read_address + 3];
 
 	initial begin
-		memory[0] <= 8'hE5;
-		memory[1] <= 8'h03;
-		memory[2] <= 8'h1F;
-		memory[3] <= 8'h8B;
+		// assign initial data
 		
-		memory[4] <= 8'hA4;
-		memory[5] <= 8'h00;
-		memory[6] <= 8'h40;
-		memory[7] <= 8'hF8;
-		
-		memory[8] <= 8'h86;
-		memory[9] <= 8'h00;
-		memory[10] <= 8'h04;
-		memory[11] <= 8'h8B;
-		
-		memory[12] <= 8'hA6;
-		memory[13] <= 8'h10;
-		memory[14] <= 8'h00;
-		memory[15] <= 8'hF8;
 	end
 endmodule

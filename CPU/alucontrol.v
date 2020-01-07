@@ -1,6 +1,6 @@
-module alucontrol#(parameter delay = 100)(input [1:0] ALUOp,input [31:25] Funct7,input [14:12] Funct3,output reg [3:0] operation);
+module alucontrol(input [1:0] ALUOp,input Funct7,input [14:12] Funct3,output reg [3:0] operation);
     
-    assign key_bits = {ALUOp, Funct7[30], Funct3};
+    assign key_bits = {ALUOp, Funct7, Funct3};
     
     always @(key_bits) begin
       operation = 4'bz;

@@ -1,6 +1,6 @@
-module alu #(parameter n = 64,parameter delay = 100)(input_a, input_b, opcode, output_z, output_data);
-	input [n-1:0] input_a;
-	input [n-1:0] input_b;
+module alu (input_a, input_b, opcode, output_z, output_data);
+	input [63:0] input_a;
+	input [63:0] input_b;
 	input [3:0] opcode;
 	output reg [63:0]output_data;
 	output output_z;

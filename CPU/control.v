@@ -10,7 +10,7 @@ module control(inputs,ALUSrc, MemtoReg, RegWrite,MemRead, MemWrite, Branch, ALUO
 
     always @ (inputs) begin
     
-        casex(inputs)
+        case(inputs)
             7'b0110011: outputs = 8'b00100010;	//R-format
             7'b0000011: outputs = 8'b11110000;	//ld
             7'b0100011: outputs = 8'b10001000;	//sd

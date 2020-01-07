@@ -21,7 +21,7 @@ module cpu_singlecycle;
 
 	initial begin
 		pc_reset = 1;
-		#210 pc_reset = 0;
+		#1000 pc_reset = 0;
 	end
 
 	//Clock	

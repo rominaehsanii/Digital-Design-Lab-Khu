@@ -6,9 +6,9 @@ module immediate_generator(instruction, output_data);
 
 	always @ (instruction) begin
 		case(key_id)
-			2'b00: output_data = {{52{instruction[11]}}, instruction[11:0]};
-			2'b01: output_data = {{52{instruction[11]}}, instruction[11:5], instruction[4:0]};
-			2'b11: output_data = {{52{instruction[12]}}, instruction[12], instruction[10:5], instruction[4:1], instruction[11]};
+			2'b00: output_data = {{52{instruction[31]}}, instruction[31:20]};
+			2'b01: output_data = {{52{instruction[31]}}, instruction[31:25], instruction[11:7]};
+			2'b11: output_data = {{52{instruction[31]}}, instruction[31], instruction[7], instruction[30:25], instruction[11:8], 1'b0};
 		endcase
 	end
 
